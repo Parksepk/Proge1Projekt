@@ -1,5 +1,6 @@
 
 
+
 def algaja(kaal, vanus, pikkus, siruulatus):
     if kaal < 210 and if kaal > 50:
         if kaal >= 130:
