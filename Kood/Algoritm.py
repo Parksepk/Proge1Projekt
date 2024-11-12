@@ -20,7 +20,7 @@ def algaja(kaal, vanus, pikkus, siruulatus):
     if pikkus >= 198:
         pikkus_pkt = 100
     elif pikkus < 198:
-        pikkus_pkt = 100 - ((198 - pikkus) * ((198-140)/100))
+        pikkus_pkt = 
     if siruulatus >= 213:
         siruulatus_pkt = 110
-    elif:
+    elif 
