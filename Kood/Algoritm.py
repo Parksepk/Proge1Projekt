@@ -2,7 +2,7 @@
 
 
 def algaja(kaal, vanus, pikkus, siruulatus):
-    if kaal < 210 and if kaal > 50:
+    if kaal < 210 and kaal > 50:
         if kaal >= 130:
             kaal_pkt = (210 - kaal) / 2
         elif kaal < 130:
@@ -20,7 +20,7 @@ def algaja(kaal, vanus, pikkus, siruulatus):
     if pikkus >= 198:
         pikkus_pkt = 100
     elif pikkus < 198:
-        pikkus_pkt = 
+        pikkus_pkt = 100 - ((198 - pikkus) * ((198-140)/100))
     if siruulatus >= 213:
         siruulatus_pkt = 110
-    elif 
+    elif:
