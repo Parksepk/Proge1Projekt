@@ -12,4 +12,7 @@ label.pack(padx=20, pady=160)
 button = tk.Button(root, text = "Alusta!", font=("Arial", 18))
 button.pack()
 
+button_quit = tk.Button(root, text="Välju", command=root.quit)
+button_quit.pack()
+
 root.mainloop()
