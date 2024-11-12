@@ -10,6 +10,8 @@ def algaja(kaal, vanus, pikkus, siruulatus):
         print("Kaal ebareaalne!")
     if vanus <= 28:
         vanus_pkt = 80
+    elif vanus < 0 or vanus > 120:
+        print("Vanus ebareaalne!")
     else: 
         vanus_pkt = 80 - ((vanus - 28) * 0.025)
         if vanus_pkt < 0:
