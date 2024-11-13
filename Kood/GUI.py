@@ -17,7 +17,7 @@ def vanus(vanus):
         print("Vanus ebareaalne!")
     else: 
         #vanus_pkt = 80 - ((vanus - 28) * 0.025)
-        if vanus_pkt < 0:
+        if vanus < 0:
             vanus = 0
     return vanus
 
@@ -45,7 +45,7 @@ def main():
         siruulatus_in = float(sisend_siruulatus.get())
         potentsiaaliindeks = (kaal(kaal_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 250 * 100
         potentsiaal_ilma_vanuseta = round(((potentsiaaliindeks / 100) * 75.00), 2)
-        potentsiaal = potentsiaal_ilma_vanuseta * (1-((vanus-28)* 0.025))
+        potentsiaal = potentsiaal_ilma_vanuseta * (1-((vanus(vanus_in)-28)* 0.025))
         tulemus_box.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
 
     except ValueError:
