@@ -1,16 +1,48 @@
 import tkinter as tk
 
+def kaal(kaal):
+    if kaal < 210 and kaal > 50:
+        if kaal >= 130:
+            kaal_pkt = (210 - kaal) / 2
+        elif kaal < 130:
+            kaal_pkt = (50 - kaal) / 2 * -1
+        return kaal_pkt
+    else: 
+        print("Kaal ebareaalne!")
 
-# Funktsioon, mis vahetab lehti
-def näita_frame(frame):
-    frame.tkraise()  
+def vanus(vanus):
+    if vanus <= 28:
+        vanus_pkt = 80
+    elif vanus < 0 or vanus > 120:
+        print("Vanus ebareaalne!")
+    else: 
+        vanus_pkt = 80 - ((vanus - 28) * 0.025)
+        if vanus_pkt < 0:
+            vanus_pkt = 0
+    return vanus_pkt
+
+def pikkus(pikkus):
+    if pikkus >= 198:
+        pikkus_pkt = 100
+    elif pikkus < 198:
+        pikkus_pkt = 100 - (198 - pikkus) * (100/58)
+    elif pikkus < 40:
+        print("Pikkus ebareaalne!")
+    return pikkus_pkt
+
+def siruulatus(siruulatus):
+    if siruulatus >= 213:
+        siruulatus_pkt = 110
+    elif siruulatus <213:
+        siruulatus_pkt = 110 - (213-siruulatus) * (110/53)
+    return siruulatus_pkt
 
 def main():
     try:
-        kaal_in = float(entry_kaal.get())
-        vanus_in = int(entry_vanus.get())
-        pikkus_in = float(entry_pikkus.get())
-        siruulatus_in = float(entry_siruulatus.get())
+        kaal_in = float(sisend_kaal.get())
+        vanus_in = int(sisend_vanus.get())
+        pikkus_in = float(sisend_pikkus.get())
+        siruulatus_in = float(sisend_siruulatus.get())
         potentsiaaliindeks = (kaal(kaal_in) + vanus(vanus_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 330 * 100
         potentsiaal = round(((potentsiaaliindeks / 100) * 75.00), 2)
         tulemus_box.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
@@ -20,6 +52,10 @@ def main():
 
     except Exception as e:
         tulemus_box.config(text=f"Viga: {e}")
+
+# Funktsioon, mis vahetab lehti
+def näita_frame(frame):
+    frame.tkraise()
 
 # tkinter window
 root = tk.Tk()
