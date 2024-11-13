@@ -5,6 +5,22 @@ import tkinter as tk
 def näita_frame(frame):
     frame.tkraise()  
 
+def main():
+    try:
+        kaal_in = float(entry_kaal.get())
+        vanus_in = int(entry_vanus.get())
+        pikkus_in = float(entry_pikkus.get())
+        siruulatus_in = float(entry_siruulatus.get())
+        potentsiaaliindeks = (kaal(kaal_in) + vanus(vanus_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 330 * 100
+        potentsiaal = round(((potentsiaaliindeks / 100) * 75.00), 2)
+        tulemus_box.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
+
+    except ValueError:
+        tulemus_box.config(text="Palun sisesta kõik väärtused korrektselt!")
+
+    except Exception as e:
+        tulemus_box.config(text=f"Viga: {e}")
+
 # tkinter window
 root = tk.Tk()
 root.geometry("550x600")
@@ -42,7 +58,7 @@ label_kaal.grid(row=2, column=0, padx=10, pady=5, sticky="w")
 sisend_kaal = tk.Entry(algaja_frame, font=("Arial", 16))
 sisend_kaal.grid(row=2, column=1, padx=10, pady=5)
 
-label_vanus = tk.Label(algaja_frame, text="Vanus:", font=("Arial", 16))
+label_vanus = tk.Label(algaja_frame, text="Vanus (aastates):", font=("Arial", 16))
 label_vanus.grid(row=3, column=0, padx=10, pady=5, sticky="w")
 sisend_vanus = tk.Entry(algaja_frame, font=("Arial", 16))
 sisend_vanus.grid(row=3, column=1, padx=10, pady=5)
@@ -57,14 +73,19 @@ label_siruulatus.grid(row=5, column=0, padx=10, pady=5, sticky="w")
 sisend_siruulatus = tk.Entry(algaja_frame, font=("Arial", 16))
 sisend_siruulatus.grid(row=5, column=1, padx=10, pady=5)
 
+tulemus_box = tk.Label(algaja_frame, text="Tulemus kuvatakse siin.", font=("Arial", 16), bg="lightgrey", width=40, height=5, relief="sunken", anchor="nw", justify="left")
+tulemus_box.grid(row=7, column=0, columnspan=2, padx=10, pady=20)
+vastus_button = tk.Button(algaja_frame, text="Esita", font=("Arial", 18), command=main)
+vastus_button.grid(row=6, column=0, columnspan=2, pady=10)
+
 back_button_algaja = tk.Button(algaja_frame, text="Tagasi", font=("Arial", 18), command=lambda: näita_frame(main_frame))
 back_button_algaja.grid(pady=60, padx=10, sticky="sw")
 
 # edasijõudnud sisu
 label_edasijõudnud = tk.Label(edasijõudnud_frame, text="EDASIJÕUDNUD", font=("Arial", 18, "bold"))
-label_edasijõudnud.grid(pady=10, padx=10, sticky="nw")
+label_edasijõudnud.grid(row=0, column= 0, pady=10, padx=10, sticky="nw")
 label_sisesta_andemed_e = tk.Label(edasijõudnud_frame, text="Sisesta oma andmed:", font=("Arial", 16))
-label_sisesta_andemed_e.grid(pady=10, padx=10, row=1, column=0, sticky="w")
+label_sisesta_andemed_e.grid(row=1, column=0, pady=10, padx=10, sticky="w")
 
 back_button_edasijõudnud = tk.Button(edasijõudnud_frame, text="Tagasi", font=("Arial", 18), command=lambda: näita_frame(main_frame))
 back_button_edasijõudnud.grid(pady=60, padx=10, sticky="sw")
