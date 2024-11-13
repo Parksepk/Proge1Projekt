@@ -12,14 +12,14 @@ def kaal(kaal):
 
 def vanus(vanus):
     if vanus <= 28:
-        vanus_pkt = 80
+        vanus = 28
     elif vanus < 0 or vanus > 120:
         print("Vanus ebareaalne!")
     else: 
-        vanus_pkt = 80 - ((vanus - 28) * 0.025)
+        #vanus_pkt = 80 - ((vanus - 28) * 0.025)
         if vanus_pkt < 0:
-            vanus_pkt = 0
-    return vanus_pkt
+            vanus = 0
+    return vanus
 
 def pikkus(pikkus):
     if pikkus >= 198:
@@ -43,8 +43,9 @@ def main():
         vanus_in = int(sisend_vanus.get())
         pikkus_in = float(sisend_pikkus.get())
         siruulatus_in = float(sisend_siruulatus.get())
-        potentsiaaliindeks = (kaal(kaal_in) + vanus(vanus_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 330 * 100
-        potentsiaal = round(((potentsiaaliindeks / 100) * 75.00), 2)
+        potentsiaaliindeks = (kaal(kaal_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 250 * 100
+        potentsiaal_ilma_vanuseta = round(((potentsiaaliindeks / 100) * 75.00), 2)
+        potensiaal = potentsiaal_ilma_vanuseta * (1-((vanus-28)* 0.025))
         tulemus_box.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
 
     except ValueError:
