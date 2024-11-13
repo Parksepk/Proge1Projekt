@@ -33,9 +33,30 @@ button_edasijõudnud.grid(row=1, column=1, padx=20, pady=50)
 
 # algaja sisu
 label_algaja = tk.Label(algaja_frame, text="ALGAJA", font=("Arial", 18, "bold"))
-label_algaja.grid(pady=10, padx=10, sticky="nw")
+label_algaja.grid(row=0, column= 0, pady=10, padx=10, sticky="nw")
 label_sisesta_andemed_a = tk.Label(algaja_frame, text="Sisesta oma andmed:", font=("Arial", 16))
-label_sisesta_andemed_a.grid(pady=10, padx=10, row=1, column=0, sticky="w")
+label_sisesta_andemed_a.grid(row=1, column=0, pady=10, padx=10, sticky="w")
+
+label_kaal = tk.Label(algaja_frame, text="Kaal (kg):", font=("Arial", 16))
+label_kaal.grid(row=2, column=0, padx=10, pady=5, sticky="w")
+sisend_kaal = tk.Entry(algaja_frame, font=("Arial", 16))
+sisend_kaal.grid(row=2, column=1, padx=10, pady=5)
+
+label_vanus = tk.Label(algaja_frame, text="Vanus:", font=("Arial", 16))
+label_vanus.grid(row=3, column=0, padx=10, pady=5, sticky="w")
+sisend_vanus = tk.Entry(algaja_frame, font=("Arial", 16))
+sisend_vanus.grid(row=3, column=1, padx=10, pady=5)
+
+label_pikkus = tk.Label(algaja_frame, text="Pikkus (cm):", font=("Arial", 16))
+label_pikkus.grid(row=4, column=0, padx=10, pady=5, sticky="w")
+sisend_pikkus = tk.Entry(algaja_frame, font=("Arial", 16))
+sisend_pikkus.grid(row=4, column=1, padx=10, pady=5)
+
+label_siruulatus = tk.Label(algaja_frame, text="Siruulatus (cm):", font=("Arial", 16))
+label_siruulatus.grid(row=5, column=0, padx=10, pady=5, sticky="w")
+sisend_siruulatus = tk.Entry(algaja_frame, font=("Arial", 16))
+sisend_siruulatus.grid(row=5, column=1, padx=10, pady=5)
+
 back_button_algaja = tk.Button(algaja_frame, text="Tagasi", font=("Arial", 18), command=lambda: näita_frame(main_frame))
 back_button_algaja.grid(pady=60, padx=10, sticky="sw")
 
@@ -44,11 +65,6 @@ label_edasijõudnud = tk.Label(edasijõudnud_frame, text="EDASIJÕUDNUD", font=(
 label_edasijõudnud.grid(pady=10, padx=10, sticky="nw")
 label_sisesta_andemed_e = tk.Label(edasijõudnud_frame, text="Sisesta oma andmed:", font=("Arial", 16))
 label_sisesta_andemed_e.grid(pady=10, padx=10, row=1, column=0, sticky="w")
-
-label_question_e = tk.Label(edasijõudnud_frame, text="Mis on sinu pikkus?", font=("Arial", 14))
-label_question_e.grid(pady=5, padx=10, row=2, column=0, sticky="w")
-entry_answer_e = tk.Entry(edasijõudnud_frame, font=("Arial", 14), width=25)
-entry_answer_e.grid(pady=5, padx=10, row=3, column=0, sticky="w")
 
 back_button_edasijõudnud = tk.Button(edasijõudnud_frame, text="Tagasi", font=("Arial", 18), command=lambda: näita_frame(main_frame))
 back_button_edasijõudnud.grid(pady=60, padx=10, sticky="sw")
