@@ -51,7 +51,7 @@ def main():
         tulemus_box.config(text="Palun sisesta kõik väärtused korrektselt!")
 
     except Exception as e:
-        tulemus_box.config(text=f"Viga: {e}")
+        tulemus_box.config(text=f"Palun sisesta kõik väärtused korrektselt!")
 
 # Funktsioon, mis vahetab lehti
 def näita_frame(frame):
