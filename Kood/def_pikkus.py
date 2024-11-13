@@ -8,5 +8,5 @@ def pikkus_punktid(pikkus):
     else:
         return round(((pikkus-140)/(198-140)) * 100)
     
-pikkus = 197
+pikkus = 190
 print(pikkus_punktid(pikkus))
