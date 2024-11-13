@@ -110,10 +110,10 @@ label_siruulatus.grid(row=5, column=0, padx=10, pady=5, sticky="w")
 sisend_siruulatus = tk.Entry(algaja_frame, font=("Arial", 16))
 sisend_siruulatus.grid(row=5, column=1, padx=10, pady=5)
 
+esita_button = tk.Button(algaja_frame, text="Esita", font=("Arial", 18), command=main)
+esita_button.grid(row=6, column=0, columnspan=2, pady=10)
 tulemus_box = tk.Label(algaja_frame, text="Tulemus kuvatakse siin.", font=("Arial", 16), bg="lightgrey", width=40, height=5, relief="sunken", anchor="nw", justify="left")
 tulemus_box.grid(row=7, column=0, columnspan=2, padx=10, pady=20)
-vastus_button = tk.Button(algaja_frame, text="Esita", font=("Arial", 18), command=main)
-vastus_button.grid(row=6, column=0, columnspan=2, pady=10)
 
 back_button_algaja = tk.Button(algaja_frame, text="Tagasi", font=("Arial", 18), command=lambda: näita_frame(main_frame))
 back_button_algaja.grid(pady=60, padx=10, sticky="sw")
@@ -126,7 +126,6 @@ label_sisesta_andemed_e.grid(row=1, column=0, pady=10, padx=10, sticky="w")
 
 back_button_edasijõudnud = tk.Button(edasijõudnud_frame, text="Tagasi", font=("Arial", 18), command=lambda: näita_frame(main_frame))
 back_button_edasijõudnud.grid(pady=60, padx=10, sticky="sw")
-
 
 näita_frame(main_frame)
 
