@@ -1,7 +1,5 @@
 import tkinter as tk
 
-
-
 def kaal(kaal):
     if kaal < 210 and kaal > 50:
         if kaal >= 130:
@@ -132,3 +130,8 @@ back_button_edasijõudnud.grid(pady=60, padx=10, sticky="sw")
 näita_frame(main_frame)
 
 root.mainloop()
+
+
+
+
+print("tere")
