@@ -133,6 +133,3 @@ näita_frame(main_frame)
 root.mainloop()
 
 
-
-
-print("tere")
