@@ -62,8 +62,8 @@ def main():
 
 kaal_in = int(input("Sisesta kaal: "))
 vanus_in = int(input("Sisesta vanus:"))
-pikkus_in = int(input("Sisesta pikkus:"))
-siruulatus_in = int(input("Sisesta siruulatus: "))
+pikkus_in = int(input("Sisesta pikkus (cm):"))
+siruulatus_in = int(input("Sisesta siruulatus (cm): "))
 
 
 if __name__ == "__main__":
