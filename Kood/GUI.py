@@ -48,7 +48,7 @@ def main():
         siruulatus_in = float(sisend_siruulatus.get())
         potentsiaaliindeks = (kaal(kaal_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 250 * 100
         potentsiaal_ilma_vanuseta = round(((potentsiaaliindeks / 100) * 75.00), 2)
-        potentsiaal = potentsiaal_ilma_vanuseta * (1-((vanus(vanus_in)-28)* 0.025))
+        potentsiaal = round(potentsiaal_ilma_vanuseta * (1-((vanus(vanus_in)-28)* 0.025)), 2)
         tulemus_box.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
 
     except ValueError:
