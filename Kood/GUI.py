@@ -1,6 +1,8 @@
 import tkinter as tk
 
 
+
+#AMA=mEONIBAIUe
 def kaal(kaal):
     if kaal < 210 and kaal > 50:
         if kaal >= 130:
@@ -125,11 +127,35 @@ label_edasijõudnud.grid(row=0, column= 0, pady=10, padx=10, sticky="nw")
 label_sisesta_andemed_e = tk.Label(edasijõudnud_frame, text="Sisesta oma andmed:", font=("Arial", 16))
 label_sisesta_andemed_e.grid(row=1, column=0, pady=10, padx=10, sticky="w")
 
+label_kaal_edasijõudnud = tk.Label(edasijõudnud_frame, text="Kaal (kg):", font=("Arial", 16))
+label_kaal_edasijõudnud.grid(row=2, column=0, padx=10, pady=5, sticky="w")
+sisend_kaal_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 16))
+sisend_kaal_edasijõudnud.grid(row=2, column=1, padx=10, pady=5)
+
+label_vanus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Vanus (aastates):", font=("Arial", 16))
+label_vanus_edasijõudnud.grid(row=3, column=0, padx=10, pady=5, sticky="w")
+sisend_vanus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 16))
+sisend_vanus_edasijõudnud.grid(row=3, column=1, padx=10, pady=5)
+
+label_pikkus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Pikkus (cm):", font=("Arial", 16))
+label_pikkus_edasijõudnud.grid(row=4, column=0, padx=10, pady=5, sticky="w")
+sisend_pikkus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 16))
+sisend_pikkus_edasijõudnud.grid(row=4, column=1, padx=10, pady=5)
+
+label_siruulatus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Siruulatus (cm):", font=("Arial", 16))
+label_siruulatus_edasijõudnud.grid(row=5, column=0, padx=10, pady=5, sticky="w")
+sisend_siruulatus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 16))
+sisend_siruulatus_edasijõudnud.grid(row=5, column=1, padx=10, pady=5)
+
+esita_button_edasijõudnud = tk.Button(edasijõudnud_frame, text="Esita", font=("Arial", 18), command=main)
+esita_button_edasijõudnud.grid(row=6, column=0, columnspan=2, pady=10)
+tulemus_box_edasijõudnud = tk.Label(edasijõudnud_frame, text="Tulemus kuvatakse siin.", font=("Arial", 16), bg="lightgrey", width=40, height=5, relief="sunken", anchor="nw", justify="left")
+tulemus_box_edasijõudnud.grid(row=7, column=0, columnspan=2, padx=10, pady=20)
+
 back_button_edasijõudnud = tk.Button(edasijõudnud_frame, text="Tagasi", font=("Arial", 18), command=lambda: näita_frame(main_frame))
 back_button_edasijõudnud.grid(pady=60, padx=10, sticky="sw")
 
 näita_frame(main_frame)
 
 root.mainloop()
-
 
