@@ -1,5 +1,8 @@
 import tkinter as tk
 
+
+
+#AMA=mEONIBAIUe
 def kaal(kaal):
     if kaal < 210 and kaal > 50:
         if kaal >= 130:
