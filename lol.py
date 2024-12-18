@@ -3,17 +3,25 @@
 # 2024/2025 sügissemester
 #
 # Projekt
-# Teema: Kettaheite potentsiaali kalkulaator
 #
+# Teema: Kettaheite potentsiaali kalkulaator (Meestele)
+# Arvutab potentsiaalse kettaheite tulemuse vastavalt kasutaja 
+# füüsilistele näitajatele (Teoreetiliste ideaalsete tehniliste aspektide valdamisel)
 #
 # Autorid: Hannes Remmelgas, Kaspar Parksepp
 #
-# mõningane eeskuju: 
+# mõningane eeskuju: Puudub
 #
 # Lisakommentaar (nt käivitusjuhend):
+# Vaja tõmmata endale tkiner extension (Terminalis: "pip install tk")
 #
 ##################################################
-import tkinter as tk
+
+import tkinter as tk #Impordime GUI liidese
+
+#Edaspidi defineerime kõik vajaminevad funktsioonid
+#Iga füüsilise ja/või jõulise näitaja kohta eraldi funktsioon,
+#  mis arvutab vastava punktiskoori
 
 def kaal(kaal_input):
     if kaal_input < 210 and kaal_input > 50:
@@ -134,6 +142,10 @@ def p_kaugus(p_kaugus_input):
     
     return p_kaugus_pkt 
 
+#Tulemuste funktsioon ehk n.ö. main funktsioon
+#Selgitab välja, kas kasutaja valis "algaja" või "edasijõudnud" variandi ning seejärel 
+# proovib kõikide funktsioonide tulemuste abil leida optimaalne tulemus, juhul kui mõni sisend on
+# puudu või ei sobi, palub programm sisestada kõik väärtused korrektselt.
 
 def tulemused(haru):
     if haru == "algaja":
@@ -175,6 +187,8 @@ def tulemused(haru):
 
         except ValueError:
             tulemus_box_edasijõudnud.config(text="Palun sisesta kõik väärtused korrektselt!")
+
+#SIIT EDASI PUHTALT GUI 
 
 #Funktsioon, mis vahetab frame/lehti
 def näita_frame(frame):
