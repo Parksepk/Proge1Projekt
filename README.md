@@ -1,4 +1,8 @@
 # Proge1Projekt
 
 
-meie projekt
+meie programmeerimise projekt
+
+!!!ON VAJA ALLA LAADIDA TKINTER EXTENSION!!!
+
+        "pip install tk"
