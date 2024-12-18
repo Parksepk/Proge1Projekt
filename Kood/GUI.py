@@ -2,7 +2,6 @@ import tkinter as tk
 
 
 
-#AMA=mEONIBAIUe
 def kaal(kaal):
     if kaal < 210 and kaal > 50:
         if kaal >= 130:
@@ -15,14 +14,15 @@ def kaal(kaal):
 
 def vanus(vanus):
     if vanus <= 28:
-        vanus = 28
+        vanus_pkt = 28
     elif vanus < 0 or vanus > 120:
         print("Vanus ebareaalne!")
+        vanus_pkt = 0
     else: 
-        #vanus_pkt = 80 - ((vanus - 28) * 0.025)
+        vanus_pkt = 80 - ((vanus - 28) / 100)
         if vanus < 0:
             vanus = 0
-    return vanus
+    return vanus_pkt
 
 def pikkus(pikkus):
     if pikkus >= 198:
@@ -48,7 +48,7 @@ def main():
         siruulatus_in = float(sisend_siruulatus.get())
         potentsiaaliindeks = (kaal(kaal_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 250 * 100
         potentsiaal_ilma_vanuseta = round(((potentsiaaliindeks / 100) * 75.00), 2)
-        potentsiaal = round(potentsiaal_ilma_vanuseta * (1-((vanus(vanus_in)-28)* 0.025)), 2)
+        potentsiaal = round(potentsiaal_ilma_vanuseta - vanus(vanus_in), 2)
         tulemus_box.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
 
     except ValueError:

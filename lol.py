@@ -1,78 +1,163 @@
 import tkinter as tk
 
-
-
-#AMA=mEONIBAIUe
-def kaal(kaal):
-    if kaal < 210 and kaal > 50:
-        if kaal >= 130:
-            kaal_pkt = (210 - kaal) / 2
-        elif kaal < 130:
-            kaal_pkt = (50 - kaal) / 2 * -1
+def kaal(kaal_input):
+    if kaal_input < 210 and kaal_input > 50:
+        if kaal_input >= 130:
+            kaal_pkt = (210 - kaal_input) / 2    
+        elif kaal_input < 130:
+            kaal_pkt = (50 - kaal_input) / 2 * -1
+            
         return kaal_pkt
+    
     else: 
         print("Kaal ebareaalne!")
 
-def vanus(vanus):
-    if vanus <= 28:
-        vanus = 28
-    elif vanus < 0 or vanus > 120:
+def vanus(vanus_input):
+    if vanus_input <= 28:
+        vanus_pkt = 1
+    elif vanus_input < 0 or vanus_input > 120:
+        vanus_pkt = 100
         print("Vanus ebareaalne!")
     else: 
-        #vanus_pkt = 80 - ((vanus - 28) * 0.025)
-        if vanus < 0:
-            vanus = 0
-    return vanus
+        vanus_pkt = vanus - 27
+        
+    return vanus_pkt
 
-def pikkus(pikkus):
-    if pikkus >= 198:
+def pikkus(pikkus_input):
+    if pikkus_input >= 198:
         pikkus_pkt = 100
-    elif pikkus < 198:
-        pikkus_pkt = 100 - (198 - pikkus) * (100/58)
-    elif pikkus < 40:
+    elif pikkus_input < 198:
+        pikkus_pkt = 100 - (198 - pikkus_input) * (100/58)
+    elif pikkus_input < 40:
         print("Pikkus ebareaalne!")
+        
     return pikkus_pkt
 
-def siruulatus(siruulatus):
-    if siruulatus >= 213:
+def siruulatus(siruulatus_input):
+    if siruulatus_input >= 213:
         siruulatus_pkt = 110
-    elif siruulatus <213:
-        siruulatus_pkt = 110 - (213-siruulatus) * (110/53)
+    elif siruulatus_input <213:
+        siruulatus_pkt = 110 - (213-siruulatus_input) * (110/53)
+        
     return siruulatus_pkt
+
+def rinnalevõtt(rinnalevõtt_input):
+    if rinnalevõtt_input < 20:
+        rinnalevõtt_pkt = 0
+    elif rinnalevõtt_input >= 200:
+        rinnalevõtt_pkt = 90
+    elif rinnalevõtt_input < 0:
+        rinnalevõtt_pkt = 0
+        print("Number on ebareaalne")
+    else:
+        rinnalevõtt_pkt = (rinnalevõtt_input - 20) / 2
+        
+    return rinnalevõtt_pkt
+
+def rebimine(rebimine_input):
+    if rebimine_input < 20:
+        rebimine_pkt = 0
+    elif rebimine_input >= 160:
+        rebimine_pkt = 90
+    elif rebimine_input < 0:
+        rebimine_input = 0
+        print("Number on ebareaalne")
+    else:
+        rebimine_pkt = (rebimine_input - 20) / 1.55
+        
+    return rebimine_pkt
+
+def kükk(kükk_input):
+    if kükk_input < 20:
+        kükk_pkt = 0
+    elif kükk_input >= 300:
+        kükk_pkt = 80
+    elif kükk_input < 0:
+        kükk_pkt = 0
+        print("Number on ebareaalne")
+    else:
+        kükk_pkt = (kükk_input - 20) / 3.5
+    
+    return kükk_pkt
+
+def rinnalt_surumine(rinnalt_surumine_input):
+    if rinnalt_surumine_input < 20:
+        rinnalt_surumine_pkt = 0
+    elif rinnalt_surumine_input >= 220:
+        rinnalt_surumine_pkt = 80
+    elif rinnalt_surumine_input < 0:
+        rinnalt_surumine_pkt = 0
+        print("Number on ebareaalne")
+    else:
+        rinnalt_surumine_pkt = (rinnalt_surumine_input - 20) / 2.5
+
+    return rinnalt_surumine_pkt
+
+def jõutõmme(jõutõmme_input):
+    if jõutõmme_input < 60:
+        jõutõmme_pkt = 0
+    elif jõutõmme_input >= 320:
+        jõutõmme_pkt = 80
+    elif jõutõmme_input < 0:
+        jõutõmme_pkt = 0
+        print("Number on ebareaalne")
+    else:
+        jõutõmme_pkt = (jõutõmme_input - 60) / 3.25
+
+    return jõutõmme_pkt
+
+def p_kaugus(p_kaugus_input):
+    if p_kaugus_input < 195:
+        p_kaugus_pkt = 0
+    elif p_kaugus_input >= 320:
+        p_kaugus_pkt = 100
+    elif p_kaugus_input < 0:
+        p_kaugus_pkt = 0
+        print("Number on ebareaalne")
+    else:
+        p_kaugus_pkt = (p_kaugus_input - 190) * 0.8
+    
+    return p_kaugus_pkt 
+
 
 def tulemused(haru):
     if haru == "algaja":
         try:
-            kaal_in = float(sisend_kaal.get())
-            vanus_in = int(sisend_vanus.get())
-            pikkus_in = float(sisend_pikkus.get())
-            siruulatus_in = float(sisend_siruulatus.get())
-            potentsiaaliindeks = (kaal(kaal_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 250 * 100
-            potentsiaal_ilma_vanuseta = round(((potentsiaaliindeks / 100) * 75.00), 2)
-            potentsiaal = round(potentsiaal_ilma_vanuseta * (1-((vanus(vanus_in)-28)* 0.025)), 2)
+            kaal_input = float(sisend_kaal.get())
+            vanus_input = int(sisend_vanus.get())
+            pikkus_input = float(sisend_pikkus.get())
+            siruulatus_input = float(sisend_siruulatus.get())
+
+            potentsiaaliindeks = kaal(kaal_input) + pikkus(pikkus_input) + siruulatus(siruulatus_input) / 250 * 100
+            potentsiaal_ilma_vanuseta = float((potentsiaaliindeks/100) * 45)
+            potentsiaal = round(potentsiaal_ilma_vanuseta - (potentsiaal_ilma_vanuseta * vanus(vanus_input) * 0.025), 2)
             tulemus_box_algaja.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
 
         except ValueError:
             tulemus_box_algaja.config(text="Palun sisesta kõik väärtused korrektselt!")
 
-        except Exception as e:
-            tulemus_box_algaja.config(text=f"Palun sisesta kõik väärtused korrektselt!")
+
     if haru == "edasijõudnud":
         try:
-            kaal_in = float(sisend_kaal.get())
-            vanus_in = int(sisend_vanus.get())
-            pikkus_in = float(sisend_pikkus.get())
-            siruulatus_in = float(sisend_siruulatus.get())
-            potentsiaaliindeks = (kaal(kaal_in) + pikkus(pikkus_in) + siruulatus(siruulatus_in)) / 250 * 100
-            potentsiaal_ilma_vanuseta = round(((potentsiaaliindeks / 100) * 75.00), 2)
-            potentsiaal = round(potentsiaal_ilma_vanuseta * (1-((vanus(vanus_in)-28)* 0.025)), 2)
+            kaal_input = float(sisend_kaal_edasijõudnud.get())
+            vanus_input = int(sisend_vanus_edasijõudnud.get())
+            pikkus_input = float(sisend_pikkus_edasijõudnud.get())
+            siruulatus_input = float(sisend_siruulatus_edasijõudnud.get())
+            rinnalevõtt_input = int(sisend_rinnalevõtt_edasijõudnud.get())
+            rebimine_input = int(sisend_rebimine_edasijõudnud.get())
+            kükk_input = int(sisend_kükk_edasijõudnud.get())
+            rinnalt_surumine_input = int(sisend_rinnalt_surumine_edasijõudnud.get())
+            jõutõmme_input = int(sisend_jõutõmme_edasijõudnud.get())
+            p_kaugus_input = int(sisend_p_kaugus_edasijõudnud.get())
+
+            potentsiaaliindeks = (kaal(kaal_input) + pikkus(pikkus_input) + siruulatus(siruulatus_input) + rinnalevõtt(rinnalevõtt_input) + rebimine(rebimine_input) + kükk(kükk_input) + rinnalt_surumine(rinnalt_surumine_input) + jõutõmme(jõutõmme_input) + p_kaugus(p_kaugus_input)) / 770 * 100
+            potentsiaal_ilma_vanuseta = float((potentsiaaliindeks/100) * 75)
+            potentsiaal = round(potentsiaal_ilma_vanuseta - (potentsiaal_ilma_vanuseta * vanus(vanus_input) * 0.025), 2)
             tulemus_box_edasijõudnud.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
 
         except ValueError:
             tulemus_box_edasijõudnud.config(text="Palun sisesta kõik väärtused korrektselt!")
 
-        except Exception as e:
-            tulemus_box_edasijõudnud.config(text=f"Palun sisesta kõik väärtused korrektselt!")
 
 # Funktsioon, mis vahetab lehti
 def näita_frame(frame):
@@ -179,20 +264,20 @@ label_kükk_edasijõudnud.grid(row=8, column=0, padx=10, pady=3, sticky="w")
 sisend_kükk_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_kükk_edasijõudnud.grid(row=8, column=1, padx=10, pady=3)
 
-label_rinnaltsurumine_edasijõudnud = tk.Label(edasijõudnud_frame, text="Rinnalt surumine (kg):", font=("Arial", 14))
-label_rinnaltsurumine_edasijõudnud.grid(row=9, column=0, padx=10, pady=3, sticky="w")
-sisend_rinnaltsurumine_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
-sisend_rinnaltsurumine_edasijõudnud.grid(row=9, column=1, padx=10, pady=3)
+label_rinnalt_surumine_edasijõudnud = tk.Label(edasijõudnud_frame, text="Rinnalt surumine (kg):", font=("Arial", 14))
+label_rinnalt_surumine_edasijõudnud.grid(row=9, column=0, padx=10, pady=3, sticky="w")
+sisend_rinnalt_surumine_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
+sisend_rinnalt_surumine_edasijõudnud.grid(row=9, column=1, padx=10, pady=3)
 
 label_jõutõmme_edasijõudnud = tk.Label(edasijõudnud_frame, text="Jõutõmme (kg):", font=("Arial", 14))
 label_jõutõmme_edasijõudnud.grid(row=10, column=0, padx=10, pady=3, sticky="w")
 sisend_jõutõmme_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_jõutõmme_edasijõudnud.grid(row=10, column=1, padx=10, pady=3)
 
-label_paigaltkaugus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Paigalt kaugus (cm):", font=("Arial", 14))
-label_paigaltkaugus_edasijõudnud.grid(row=11, column=0, padx=10, pady=3, sticky="w")
-sisend_paigaltkaugus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
-sisend_paigaltkaugus_edasijõudnud.grid(row=11, column=1, padx=10, pady=3)
+label_p_kaugus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Paigalt kaugus (cm):", font=("Arial", 14))
+label_p_kaugus_edasijõudnud.grid(row=11, column=0, padx=10, pady=3, sticky="w")
+sisend_p_kaugus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
+sisend_p_kaugus_edasijõudnud.grid(row=11, column=1, padx=10, pady=3)
 
 esita_button_edasijõudnud = tk.Button(edasijõudnud_frame, text="Esita", font=("Arial", 16), command=lambda: tulemused("edasijõudnud"))
 esita_button_edasijõudnud.grid(row=12, column=0, columnspan=2, pady=5)
