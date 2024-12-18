@@ -84,12 +84,12 @@ def rinnalt_surumine(rinnalt_surumine_input):
     if rinnalt_surumine_input < 20:
         rinnalt_surumine_pkt = 0
     elif rinnalt_surumine_input >= 220:
-        rinnalt_surumine_pkt = 80
+        rinnalt_surumine_pkt = 60
     elif rinnalt_surumine_input < 0:
         rinnalt_surumine_pkt = 0
         print("Number on ebareaalne")
     else:
-        rinnalt_surumine_pkt = (rinnalt_surumine_input - 20) / 2.5
+        rinnalt_surumine_pkt = (rinnalt_surumine_input - 20) / 3.33
 
     return rinnalt_surumine_pkt
 
@@ -97,25 +97,25 @@ def jõutõmme(jõutõmme_input):
     if jõutõmme_input < 60:
         jõutõmme_pkt = 0
     elif jõutõmme_input >= 320:
-        jõutõmme_pkt = 80
+        jõutõmme_pkt = 60
     elif jõutõmme_input < 0:
         jõutõmme_pkt = 0
         print("Number on ebareaalne")
     else:
-        jõutõmme_pkt = (jõutõmme_input - 60) / 3.25
+        jõutõmme_pkt = (jõutõmme_input - 60) / 4.33
 
     return jõutõmme_pkt
 
 def p_kaugus(p_kaugus_input):
-    if p_kaugus_input < 195:
+    if p_kaugus_input < 190:
         p_kaugus_pkt = 0
-    elif p_kaugus_input >= 320:
-        p_kaugus_pkt = 100
+    elif p_kaugus_input >= 340:
+        p_kaugus_pkt = 90
     elif p_kaugus_input < 0:
         p_kaugus_pkt = 0
         print("Number on ebareaalne")
     else:
-        p_kaugus_pkt = (p_kaugus_input - 190) * 0.8
+        p_kaugus_pkt = (p_kaugus_input - 190) / 1.67
     
     return p_kaugus_pkt 
 
@@ -150,9 +150,12 @@ def tulemused(haru):
             jõutõmme_input = int(sisend_jõutõmme_edasijõudnud.get())
             p_kaugus_input = int(sisend_p_kaugus_edasijõudnud.get())
 
-            potentsiaaliindeks = (kaal(kaal_input) + pikkus(pikkus_input) + siruulatus(siruulatus_input) + rinnalevõtt(rinnalevõtt_input) + rebimine(rebimine_input) + kükk(kükk_input) + rinnalt_surumine(rinnalt_surumine_input) + jõutõmme(jõutõmme_input) + p_kaugus(p_kaugus_input)) / 770 * 100
-            potentsiaal_ilma_vanuseta = float((potentsiaaliindeks/100) * 75)
-            potentsiaal = round(potentsiaal_ilma_vanuseta - (potentsiaal_ilma_vanuseta * vanus(vanus_input) * 0.025), 2)
+            potentsiaaliindeks = (kaal(kaal_input) + pikkus(pikkus_input) + siruulatus(siruulatus_input) + rinnalevõtt(rinnalevõtt_input) + rebimine(rebimine_input) + kükk(kükk_input) + rinnalt_surumine(rinnalt_surumine_input) + jõutõmme(jõutõmme_input) + p_kaugus(p_kaugus_input)) / 720 * 100
+            potentsiaal_ilma_vanuseta = float(potentsiaaliindeks)
+            potentsiaal = round(potentsiaal_ilma_vanuseta - (potentsiaal_ilma_vanuseta * vanus(vanus_input) * 0.01), 2)
+            if potentsiaal > 80:
+                potentsiaal *= 0.8
+                potentsiaal = round(potentsiaal, 2)
             tulemus_box_edasijõudnud.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
 
         except ValueError:
