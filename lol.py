@@ -159,17 +159,17 @@ def tulemused(haru):
             tulemus_box_edasijõudnud.config(text="Palun sisesta kõik väärtused korrektselt!")
 
 
-# Funktsioon, mis vahetab lehti
+#Funktsioon, mis vahetab frame/lehti
 def näita_frame(frame):
     frame.tkraise()
 
-# tkinter window
+#Loob tkinter akna
 root = tk.Tk()
 root.geometry("550x600")
 root.title("Kettaheite potentsiaali kalkulaator")
 root.resizable(False, False)
 
-# lehed
+#Loob framed/lehed
 main_frame = tk.Frame(root)
 main_frame.grid(row=0, column=0, sticky='nsew')
 
@@ -179,17 +179,18 @@ algaja_frame.grid(row=0, column=0, sticky='nsew')
 edasijõudnud_frame = tk.Frame(root)
 edasijõudnud_frame.grid(row=0, column=0, sticky='nsew')
 
-# esimese lehe sisu
+#Pealehe lehe sisu
+#Loob pealkirja
 pealkiri = tk.Label(main_frame, text="Kettaheite potentsiaali kalkulaator", font=("Arial", 18, "bold"))
 pealkiri.grid(padx=10, pady=60, row=0, column=0, columnspan=2)
-
-button_algaja = tk.Button(main_frame, text="Algaja", width = 15, height = 2, bg = "red", font=("Arial", 18), command=lambda: näita_frame(algaja_frame))
+#Loob algaja nupu
+button_algaja = tk.Button(main_frame, text="Algaja", width = 15, height = 2, bg = "red", font=("Arial", 18), command=lambda: näita_frame(algaja_frame)) #nupp kutsub välja funktsiooni näita_frame()
 button_algaja.grid(row=1, column=0, padx=20, pady=50)
-
-button_edasijõudnud = tk.Button(main_frame, text="Edasijõudnud",width = 15, height = 2, bg = "blue", font=("Arial", 18), command=lambda: näita_frame(edasijõudnud_frame))
+#Loob edasijõudnud nupu
+button_edasijõudnud = tk.Button(main_frame, text="Edasijõudnud",width = 15, height = 2, bg = "blue", font=("Arial", 18), command=lambda: näita_frame(edasijõudnud_frame)) #nupp kutsub välja funktsiooni näita_frame()
 button_edasijõudnud.grid(row=1, column=1, padx=20, pady=50)
 
-# algaja sisu
+#Algaja lehe sisu
 label_algaja = tk.Label(algaja_frame, text="ALGAJA", font=("Arial", 18, "bold"))
 label_algaja.grid(row=0, column= 0, pady=10, padx=10, sticky="nw")
 label_sisesta_andemed_a = tk.Label(algaja_frame, text="Sisesta oma andmed:", font=("Arial", 16))
