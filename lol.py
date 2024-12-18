@@ -194,72 +194,99 @@ button_edasijõudnud = tk.Button(main_frame, text="Edasijõudnud",width = 15, he
 button_edasijõudnud.grid(row=1, column=1, padx=20, pady=50)
 
 #Algaja lehe sisu
+#Loob algaja teksti
 label_algaja = tk.Label(algaja_frame, text="ALGAJA", font=("Arial", 18, "bold"))
 label_algaja.grid(row=0, column= 0, pady=10, padx=10, sticky="nw")
+
+#Loob sisesta andmed teksti
 label_sisesta_andemed_a = tk.Label(algaja_frame, text="Sisesta oma andmed:", font=("Arial", 16))
 label_sisesta_andemed_a.grid(row=1, column=0, pady=10, padx=10, sticky="w")
 
+#Loob teksti kaal
 label_kaal = tk.Label(algaja_frame, text="Kaal (kg):", font=("Arial", 14))
 label_kaal.grid(row=2, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi kaal
 sisend_kaal = tk.Entry(algaja_frame, font=("Arial", 14))
 sisend_kaal.grid(row=2, column=1, padx=10, pady=3)
 
+#Loob teksti vanus
 label_vanus = tk.Label(algaja_frame, text="Vanus (aastates):", font=("Arial", 14))
 label_vanus.grid(row=3, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi kaal
 sisend_vanus = tk.Entry(algaja_frame, font=("Arial", 14))
 sisend_vanus.grid(row=3, column=1, padx=10, pady=3)
 
+#Loob teksti pikkus
 label_pikkus = tk.Label(algaja_frame, text="Pikkus (cm):", font=("Arial", 14))
 label_pikkus.grid(row=4, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi pikkus
 sisend_pikkus = tk.Entry(algaja_frame, font=("Arial", 14))
 sisend_pikkus.grid(row=4, column=1, padx=10, pady=3)
 
+#Loob teksti siruulatus
 label_siruulatus = tk.Label(algaja_frame, text="Siruulatus (cm):", font=("Arial", 14))
 label_siruulatus.grid(row=5, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi suruulatus
 sisend_siruulatus = tk.Entry(algaja_frame, font=("Arial", 14))
 sisend_siruulatus.grid(row=5, column=1, padx=10, pady=3)
 
+#Loob esita nupu, mida vajutades kutsub välja tulemused funktsiooni
 esita_button_algaja = tk.Button(algaja_frame, text="Esita", font=("Arial", 18), command=lambda: tulemused("algaja"))
 esita_button_algaja.grid(row=6, column=0, columnspan=2, pady=10)
+#Loob tulemuste kuvamiseks kasti
 tulemus_box_algaja = tk.Label(algaja_frame, text="Tulemus kuvatakse siin.", font=("Arial", 16), bg="lightgrey", width=40, height=5, relief="sunken", anchor="nw", justify="left")
 tulemus_box_algaja.grid(row=7, column=0, columnspan=2, padx=10, pady=20)
-
+#Loob lehe jaoks tagasi nupu, mida vajutades kutsub välja näita_frame funktsiooni
 back_button_algaja = tk.Button(algaja_frame, text="Tagasi", font=("Arial", 18), command=lambda: näita_frame(main_frame))
 back_button_algaja.grid(pady=60, padx=10, sticky="sw")
 
-# edasijõudnud sisu
+#Edasijõudnud lehe sisu
+#Loob edasijõudnud teksti
 label_edasijõudnud = tk.Label(edasijõudnud_frame, text="EDASIJÕUDNUD", font=("Arial", 18, "bold"))
 label_edasijõudnud.grid(row=0, column= 0, pady=10, padx=10, sticky="nw")
+#Loob sisesta andmed teksti
 label_sisesta_andemed_e = tk.Label(edasijõudnud_frame, text="Sisesta oma andmed:", font=("Arial", 16))
 label_sisesta_andemed_e.grid(row=1, column=0, pady=10, padx=10, sticky="w")
 
+#Loob kaal teksti
 label_kaal_edasijõudnud = tk.Label(edasijõudnud_frame, text="Kaal (kg):", font=("Arial", 14))
 label_kaal_edasijõudnud.grid(row=2, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi kaal
 sisend_kaal_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_kaal_edasijõudnud.grid(row=2, column=1, padx=10, pady=3)
 
+#Loob vanus teksti
 label_vanus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Vanus (aastates):", font=("Arial", 14))
 label_vanus_edasijõudnud.grid(row=3, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi vanus
 sisend_vanus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_vanus_edasijõudnud.grid(row=3, column=1, padx=10, pady=3)
 
+#Loob pikkus teksti
 label_pikkus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Pikkus (cm):", font=("Arial", 14))
 label_pikkus_edasijõudnud.grid(row=4, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi pikkus
 sisend_pikkus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_pikkus_edasijõudnud.grid(row=4, column=1, padx=10, pady=3)
 
+#Loob siruulatus teksti
 label_siruulatus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Siruulatus (cm):", font=("Arial", 14))
 label_siruulatus_edasijõudnud.grid(row=5, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi surulatus
 sisend_siruulatus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_siruulatus_edasijõudnud.grid(row=5, column=1, padx=10, pady=3)
 
+#Loob rannalevõtt teksti
 label_rinnalevõtt_edasijõudnud = tk.Label(edasijõudnud_frame, text="Rinnalevõtt (kg):", font=("Arial", 14))
 label_rinnalevõtt_edasijõudnud.grid(row=6, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi rannlevõtt
 sisend_rinnalevõtt_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_rinnalevõtt_edasijõudnud.grid(row=6, column=1, padx=10, pady=3)
 
+#Loob rebimine teksti
 label_rebimine_edasijõudnud = tk.Label(edasijõudnud_frame, text="Rebimine (kg):", font=("Arial", 14))
 label_rebimine_edasijõudnud.grid(row=7, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi rebimine
 sisend_rebimine_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_rebimine_edasijõudnud.grid(row=7, column=1, padx=10, pady=3)
 
