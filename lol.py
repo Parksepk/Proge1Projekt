@@ -6,20 +6,20 @@ def kaal(kaal_input):
             kaal_pkt = (210 - kaal_input) / 2    
         elif kaal_input < 130:
             kaal_pkt = (50 - kaal_input) / 2 * -1
-            
-        return kaal_pkt
-    
     else: 
         print("Kaal ebareaalne!")
+        kaal_pkt = 0
+    
+    return kaal_pkt
 
 def vanus(vanus_input):
     if vanus_input <= 28:
-        vanus_pkt = 1
+        vanus_pkt = 0
     elif vanus_input < 0 or vanus_input > 120:
         vanus_pkt = 100
         print("Vanus ebareaalne!")
     else: 
-        vanus_pkt = vanus - 27
+        vanus_pkt = vanus_input - 28
         
     return vanus_pkt
 
@@ -130,7 +130,7 @@ def tulemused(haru):
 
             potentsiaaliindeks = kaal(kaal_input) + pikkus(pikkus_input) + siruulatus(siruulatus_input) / 250 * 100
             potentsiaal_ilma_vanuseta = float((potentsiaaliindeks/100) * 45)
-            potentsiaal = round(potentsiaal_ilma_vanuseta - (potentsiaal_ilma_vanuseta * vanus(vanus_input) * 0.025), 2)
+            potentsiaal = round(potentsiaal_ilma_vanuseta - (potentsiaal_ilma_vanuseta * vanus(vanus_input) * 0.01), 2)
             tulemus_box_algaja.config(text=f"Sinu potentsiaalne kettaheite PB on {potentsiaal} meetrit.")
 
         except ValueError:
