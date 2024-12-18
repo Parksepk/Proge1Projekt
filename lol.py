@@ -13,7 +13,7 @@
 # mõningane eeskuju: Puudub
 #
 # Lisakommentaar (nt käivitusjuhend):
-# Vaja tõmmata endale tkiner extension (Terminalis: "pip install tk")
+# Vaja tõmmata endale tkinter extension (Terminalis: "pip install tk")
 #
 ##################################################
 
