@@ -1,3 +1,18 @@
+################################################
+# Programmeerimine I
+# 2024/2025 sügissemester
+#
+# Projekt
+# Teema: Kettaheite potentsiaali kalkulaator
+#
+#
+# Autorid: Hannes Remmelgas, Kaspar Parksepp
+#
+# mõningane eeskuju: 
+#
+# Lisakommentaar (nt käivitusjuhend):
+#
+##################################################
 import tkinter as tk
 
 def kaal(kaal_input):
@@ -161,7 +176,6 @@ def tulemused(haru):
         except ValueError:
             tulemus_box_edasijõudnud.config(text="Palun sisesta kõik väärtused korrektselt!")
 
-
 #Funktsioon, mis vahetab frame/lehti
 def näita_frame(frame):
     frame.tkraise()
@@ -183,7 +197,7 @@ edasijõudnud_frame = tk.Frame(root)
 edasijõudnud_frame.grid(row=0, column=0, sticky='nsew')
 
 #Pealehe lehe sisu
-#Loob pealkirja
+#Loob pealehe pealkirja
 pealkiri = tk.Label(main_frame, text="Kettaheite potentsiaali kalkulaator", font=("Arial", 18, "bold"))
 pealkiri.grid(padx=10, pady=60, row=0, column=0, columnspan=2)
 #Loob algaja nupu
@@ -212,7 +226,7 @@ sisend_kaal.grid(row=2, column=1, padx=10, pady=3)
 #Loob teksti vanus
 label_vanus = tk.Label(algaja_frame, text="Vanus (aastates):", font=("Arial", 14))
 label_vanus.grid(row=3, column=0, padx=10, pady=3, sticky="w")
-#Loob sisendi kaal
+#Loob sisendi vanus
 sisend_vanus = tk.Entry(algaja_frame, font=("Arial", 14))
 sisend_vanus.grid(row=3, column=1, padx=10, pady=3)
 
@@ -226,7 +240,7 @@ sisend_pikkus.grid(row=4, column=1, padx=10, pady=3)
 #Loob teksti siruulatus
 label_siruulatus = tk.Label(algaja_frame, text="Siruulatus (cm):", font=("Arial", 14))
 label_siruulatus.grid(row=5, column=0, padx=10, pady=3, sticky="w")
-#Loob sisendi suruulatus
+#Loob sisendi siuruulatus
 sisend_siruulatus = tk.Entry(algaja_frame, font=("Arial", 14))
 sisend_siruulatus.grid(row=5, column=1, padx=10, pady=3)
 
@@ -248,14 +262,14 @@ label_edasijõudnud.grid(row=0, column= 0, pady=10, padx=10, sticky="nw")
 label_sisesta_andemed_e = tk.Label(edasijõudnud_frame, text="Sisesta oma andmed:", font=("Arial", 16))
 label_sisesta_andemed_e.grid(row=1, column=0, pady=10, padx=10, sticky="w")
 
-#Loob kaal teksti
+#Loob teksti kaal
 label_kaal_edasijõudnud = tk.Label(edasijõudnud_frame, text="Kaal (kg):", font=("Arial", 14))
 label_kaal_edasijõudnud.grid(row=2, column=0, padx=10, pady=3, sticky="w")
 #Loob sisendi kaal
 sisend_kaal_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_kaal_edasijõudnud.grid(row=2, column=1, padx=10, pady=3)
 
-#Loob vanus teksti
+#Loob teksi vanus
 label_vanus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Vanus (aastates):", font=("Arial", 14))
 label_vanus_edasijõudnud.grid(row=3, column=0, padx=10, pady=3, sticky="w")
 #Loob sisendi vanus
@@ -276,48 +290,60 @@ label_siruulatus_edasijõudnud.grid(row=5, column=0, padx=10, pady=3, sticky="w"
 sisend_siruulatus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_siruulatus_edasijõudnud.grid(row=5, column=1, padx=10, pady=3)
 
-#Loob rannalevõtt teksti
+#Loob teksti rinnalevõtt
 label_rinnalevõtt_edasijõudnud = tk.Label(edasijõudnud_frame, text="Rinnalevõtt (kg):", font=("Arial", 14))
 label_rinnalevõtt_edasijõudnud.grid(row=6, column=0, padx=10, pady=3, sticky="w")
-#Loob sisendi rannlevõtt
+#Loob sisendi rinnalevõtt
 sisend_rinnalevõtt_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_rinnalevõtt_edasijõudnud.grid(row=6, column=1, padx=10, pady=3)
 
-#Loob rebimine teksti
+#Loob teksti rebimine
 label_rebimine_edasijõudnud = tk.Label(edasijõudnud_frame, text="Rebimine (kg):", font=("Arial", 14))
 label_rebimine_edasijõudnud.grid(row=7, column=0, padx=10, pady=3, sticky="w")
 #Loob sisendi rebimine
 sisend_rebimine_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_rebimine_edasijõudnud.grid(row=7, column=1, padx=10, pady=3)
 
+#Loob teksti kükk
 label_kükk_edasijõudnud = tk.Label(edasijõudnud_frame, text="Kükk (kg):", font=("Arial", 14))
 label_kükk_edasijõudnud.grid(row=8, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi kükk
 sisend_kükk_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_kükk_edasijõudnud.grid(row=8, column=1, padx=10, pady=3)
 
+#Loob teksti rinnalt surumine
 label_rinnalt_surumine_edasijõudnud = tk.Label(edasijõudnud_frame, text="Rinnalt surumine (kg):", font=("Arial", 14))
 label_rinnalt_surumine_edasijõudnud.grid(row=9, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi rinnalt surumine
 sisend_rinnalt_surumine_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_rinnalt_surumine_edasijõudnud.grid(row=9, column=1, padx=10, pady=3)
 
+#Loob teksti jõutõmme
 label_jõutõmme_edasijõudnud = tk.Label(edasijõudnud_frame, text="Jõutõmme (kg):", font=("Arial", 14))
 label_jõutõmme_edasijõudnud.grid(row=10, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi jõutõmme
 sisend_jõutõmme_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_jõutõmme_edasijõudnud.grid(row=10, column=1, padx=10, pady=3)
 
+#Loob teksti paigalt kaugus
 label_p_kaugus_edasijõudnud = tk.Label(edasijõudnud_frame, text="Paigalt kaugus (cm):", font=("Arial", 14))
 label_p_kaugus_edasijõudnud.grid(row=11, column=0, padx=10, pady=3, sticky="w")
+#Loob sisendi paigalt kaugus
 sisend_p_kaugus_edasijõudnud = tk.Entry(edasijõudnud_frame, font=("Arial", 14))
 sisend_p_kaugus_edasijõudnud.grid(row=11, column=1, padx=10, pady=3)
 
+#Loob esita nupu, mida vajutades kutsutaksevälja tulemused funktsiooni
 esita_button_edasijõudnud = tk.Button(edasijõudnud_frame, text="Esita", font=("Arial", 16), command=lambda: tulemused("edasijõudnud"))
 esita_button_edasijõudnud.grid(row=12, column=0, columnspan=2, pady=5)
+#Loob tulemuste akna, kus kuvatakse tulemus
 tulemus_box_edasijõudnud = tk.Label(edasijõudnud_frame, text="Tulemus kuvatakse siin.", font=("Arial", 16), bg="lightgrey", width=40, height=1, relief="sunken", anchor="nw", justify="left")
 tulemus_box_edasijõudnud.grid(row=13, column=0, columnspan=2, padx=10, pady=5)
 
+#Loob tagasi nupu, mida vajutades kutsutakse välja funktsioon näita_frame
 back_button_edasijõudnud = tk.Button(edasijõudnud_frame, text="Tagasi", font=("Arial", 16), command=lambda: näita_frame(main_frame))
 back_button_edasijõudnud.grid(padx=5,pady=10,	 sticky="sw")
 
+#Teeb kindlaks, et programmi avades avaneks esimesena main_frame
 näita_frame(main_frame)
-
+#Tkinteri loop, mis hoiab programmi töös ja aktiivsena
 root.mainloop()
